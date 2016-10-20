@@ -1,0 +1,37 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-md-{{ md }} col-md-offset-{{ offset }}">
+
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ heading }}</strong></span>
+	                        {% if add is defined %}
+	                        	<span class="pull-right" style="margin-top:-7px;">
+	                            	<a href="{{ url('myapp_movie_add') }}"><button type="button" class="btn btn-primary btn-md"><i class="fa fa-plus"></i></button></a>
+	                        	</span>
+                            {% endif %}
+	                    </div>
+	                    <div class="panel-body">{{ body }}</div>
+	                </div>
+	            </div>
+          
+	            <div class="jumbotron">
+                    <span style="font-size:20px">
+                    	<strong>{{ msg }}</strong>
+                    </span>
+                    {% if back is defined %}
+						<br><br>
+						<div>
+							<a class="pull-right" href="{{ path('myapp_movies') }}" style="margin-top:8px">{{ "film.backToList" | trans }}</a>
+						</div>
+					{% endif %}
+	            </div>
+	        </div>
+	    </div>
+	</div>
+			
+{% endblock %}

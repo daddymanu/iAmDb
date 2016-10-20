@@ -1,0 +1,44 @@
+            <div class="form-group form-horizontal">
+				{{ form_start(form) }}
+
+			    	{{ form_errors(form) }}
+
+				    {{ form_label(form.titre) }}
+				    {{ form_errors(form.titre) }}
+				    {{ form_widget(form.titre) }}
+
+				    {{ form_label(form.description) }}
+				    {{ form_errors(form.description) }}
+				    {{ form_widget(form.description) }}
+
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+						    {{ form_label(form.categorie) }}
+						    {{ form_errors(form.categorie) }}
+						    {{ form_widget(form.categorie) }}
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+						    {{ form_label(form.year) }}
+						    {{ form_errors(form.year) }}
+						    {{ form_widget(form.year) }}
+				    	</div>
+					</div>
+
+					{{ form_label(form.acteurs) }}
+					{{ form_errors(form.acteurs) }}
+					<div class="form-control" style="height:86px; overflow:auto">
+				        {% for act in form.acteurs %}
+				            {{ form_widget(act) }}
+				            {{ form_label(act) }}
+				            <br>
+				        {% endfor %}
+		        	</div>
+					<br>
+
+					<div>
+					{{ form_widget(form.submit) }}	    
+						<a class="pull-right" href="{{ prevPage }}" style="margin-top:8px">{{ "film.back" | trans }}</a>
+					</div>
+			    {{ form_end(form) }}
+				
+            </div>

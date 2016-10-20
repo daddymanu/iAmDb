@@ -1,0 +1,27 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container">
+	    <div class="row">
+            <div class="jumbotron" style="margin-top:50px">
+{# 		            @if (Auth::guest()) #}
+	                <div class="panel-heading"><strong>{{ "default.welcomeLabel" | trans }} {{ message }}</strong></div>
+	                <div class="panel-body">{{ "default.welcomeMessage" | trans }}</div>
+{# 	                @else
+                    <div class="panel-heading"><strong>WELCOME {{ strtoupper(Auth::user()->name) }}</strong></div>
+                	<!-- <div class="panel-body">You are now logged in...<br>Enjoy the forum...</div> -->
+                        <div class="panel-body" style="background-color:#D7EB00; height:440px; font-family:'Lato';">
+                            <div style="font-weight:100; margin-top:50px; margin-left:100px; text-align:left; font-size:42px;">Just...</div>
+                            <br>
+                            <div style="text-align:center; font-size:72px; font-weight:10;">
+                                <font color="#ff0000">F</font><font color="#df0d13">o</font><font color="#bf1a26">r</font><font color="#9f2639">H</font><font color="#80334d"><i class="fa fa-mars-double"></i></font><font color="#604060">m</font><font color="#404d73">m</font><font color="#205986">e</font><font color="#006699">s</font>
+                            </div>
+                            <br><br>
+                            <div style="font-weight:100; margin-bottom:50px; margin-right:100px; text-align:right; font-size:32px;"><i>(Hmmmmmmmmm...)</i></div>
+                        </div>
+                    <!-- <img class="img-responsive" src="myforum.png" alt="ForHommes" width="100%" height="236"> -->
+	            @endif #}
+            </div>
+	    </div>
+	</div>
+{% endblock %}

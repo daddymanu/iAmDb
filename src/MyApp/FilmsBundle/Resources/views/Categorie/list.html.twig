@@ -1,0 +1,53 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ "categorie.listHeader" | trans }}</strong></span>
+	                        <span class="pull-right" style="margin-top:-7px;">
+	                            <a href="{{ url('myapp_category_add') }}"><button type="button" class="btn btn-primary btn-md"><i class="fa fa-plus"></i></button></a>
+	                        </span>
+	                    </div>
+	                    <div class="panel-body">{{ "categorie.listBody" | trans }}.</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+	            
+	            <ul class="list-group">
+        			{% for cat in categories %}
+	                    <li class="list-group-item" style="overflow:auto">
+	                    	<a href="{{ path('myapp_category_query', { 'id': cat.id }) }}" style="text-decoration: none;">
+                                <span>
+                                	<strong>
+	                                	{% if lg == 'fr' %}
+											{{ cat.nomfr }}
+										{% elseif lg == 'es' %}
+											{{ cat.nomes }}
+										{%  elseif lg == 'de' %}
+											{ cat.nomde }}
+										{% else %}
+											{{ cat.nom }}
+										{% endif %}
+									</strong>
+                                	{# <strong>{{ cat.nom }}</strong> #}
+                                </span>
+                            </a>
+	                       {#  @if(Auth::user()->id == $post->user_id) #}
+	                        <span class="pull-right">
+	                            <a href="{{ path('myapp_category_edit', { 'id': cat.id }) }}"><button type="button" class="btn btn-info btn-xs">{{ "default.btnEdit" | trans }}</button></a>
+	                            <a href="{{ path('myapp_category_delete', { 'id': cat.id }) }}"><button type="button" class="btn btn-danger btn-xs">{{ "default.btnDelete" | trans }}</button></a>
+	                        </span>
+	                        {# @endif #}
+	                    </li>
+					{% endfor %}
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+			
+{% endblock %}

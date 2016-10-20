@@ -1,0 +1,61 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-md-10 col-md-offset-1">
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ "acteur.queryHeader" | trans }}</strong></span>
+	                    </div>
+	                    <div class="panel-body">{{ "acteur.queryBody" | trans }}</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+	            
+	            <div class="jumbotron">
+                    <span style="font-size:20px">
+                    	<strong>{{ actor.prenom|capitalize }} {{ actor.nom|upper }}</strong>
+                    </span>
+                    <span style="margin-left:10px">
+						{% if actor.sexe == 'F' %}
+                        	<i class="fa fa-venus" style="color:pink"></i>
+						{% else %}
+                        	<i class="fa fa-mars" style="color:blue"></i>
+						{% endif %}
+                    </span>
+                    <span style="font-size:10px; margin-left:10px">
+						({{ actor.dateNaissance|date("F jS, Y") }})
+                    </span>
+					<br><br>
+                    <span style="font-size:15px">
+						<strong>{{ "acteur.queryMovies" | trans }}:</strong>
+                    </span>
+                    <br>
+                	{% for mov in actor.films %}
+                		<a href="{{ path('myapp_movie_query', { 'id': mov.id }) }}" style="text-decoration: none;">
+	                        <span style="font-size:15px">
+								{{ mov.titre }}
+	                        </span>
+                    	</a>
+                        <span style="font-size:10px; margin-left:10px">
+							({{ mov.year }})
+                        </span>
+                        <br>
+					{% else %}
+	                    <span style="font-size:15px">
+	                        <em>{{ "film.notFoundMsg" | trans }}</em>
+	                    </span>
+                    {% endfor %}
+					<br>
+					<div>
+						<a class="pull-right" href="{{ prevPage }}" style="margin-top:8px">{{ "acteur.back" | trans }}</a>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+			
+{% endblock %}

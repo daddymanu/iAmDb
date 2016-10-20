@@ -1,0 +1,57 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-md-10 col-md-offset-1">
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ "film.queryHeader" | trans }}</strong></span>
+	                    </div>
+	                    <div class="panel-body">{{ "film.queryBody" | trans }}</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+	            
+	            <div class="jumbotron" style="overflow:auto">
+                    <span style="font-size:20px">
+                    	<strong>{{ movie.titre }}</strong>
+                    </span>
+
+                    <span style="font-size:10px; margin-left:10px">
+						({{ movie.categorie.nom }}, {{ movie.year }})
+                    </span>
+
+                	{% for act in movie.acteurs %}
+                        <span style="font-size:10px; margin-left:10px">
+							{{ act.prenom|capitalize }} {{ act.nom|upper }}
+                        </span>
+                    {% endfor %}
+
+					<div class="row">
+						<div class="col-md-10">
+	                    	<span style="color:grey; font-size:10px">
+	                        	<em>{{ movie.description }}</em>
+	                    	</span>
+						</div>
+						<div class="col-md-2">
+		                   {#  @if(Auth::user()->id == $post->user_id) #}
+		                    <span class="pull-right">
+		                        <a href="{{ path('myapp_movie_edit', { 'id': movie.id }) }}"><button type="button" class="btn btn-info btn-xs">{{ "default.btnEdit" | trans }}</button></a>
+		                        <a href="{{ path('myapp_movie_delete', { 'id': movie.id }) }}"><button type="button" class="btn btn-danger btn-xs">{{ "default.btnDelete" | trans }}</button></a>
+		                    </span>
+		                    {# @endif #}
+						</div>
+					</div>
+
+					<div>
+						<a class="pull-right" href="{{ prevPage }}" style="margin-top:8px">{{ "film.back" | trans }}</a>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+			
+{% endblock %}

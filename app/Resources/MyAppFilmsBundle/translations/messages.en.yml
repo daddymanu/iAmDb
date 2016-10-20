@@ -1,0 +1,126 @@
+default.metaDescription: The goal of this exercise is to work with Symfony. It is based on a site offering detailed records of movies in different categories and with different actors.
+default.logoAlt: MyFilms logo
+
+default.moviesLabel: Movies
+default.actorsLabel: Actors
+default.categoriesLabel: Categories
+default.languageLabel: Language
+default.loginLabel: Login
+default.registerLabel: Register
+
+default.welcomeLabel: WELCOME
+default.welcomeUser: GUEST
+default.welcomeMessage: In order to access our movie database, please login...
+
+default.btnSave: Save
+default.btnSubmit: Submit
+default.btnEdit: Edit
+default.btnDelete: Delete
+
+default.back: Back
+
+default.noResult: SORRY, NO RESULT...
+
+# ACTORS
+
+acteur: Actor
+
+acteur.nom: Last name
+acteur.prenom: First name
+acteur.dateNaissance: Date of birth
+acteur.sexe: Gender
+
+acteur.listHeader: ACTORS/ACTRESSES LIST
+acteur.listBody: Here you can review all actors/actresses in our database...
+
+acteur.addHeader: NEW ACTOR/ACTRESS
+acteur.addBody: Here you can create a new actor/actress...
+acteur.addSuccess: Actor/Actress created successfully
+
+acteur.editHeader: EDIT ACTOR/ACTRESS
+acteur.editBody: Here you can modify the information about an actor/actress...
+acteur.editSuccess: Actor/Actress edited successfully
+
+acteur.queryHeader: DETAILS OF THE ACTOR/ACTRESS
+acteur.queryBody: Here you can review details of the actor/actress you selected...
+acteur.queryMovies: Movies with this actor/actress include
+
+acteur.deleteSuccess: Actor/Actress deleted successfully
+
+acteur.foundMsg: %counter% actor(s) found
+acteur.notFoundMsg: No actor/actress found...
+acteur.srSearch: Search
+acteur.altLoading: Searching, please wait...
+acteur.back: Back to Actors
+acteur.backToList: Back to Actors list
+
+# CATEGORIES
+
+categorie: Category
+
+categorie.nom: Name
+
+categorie.listHeader: CATEGORIES LIST
+categorie.listBody: Here you can review all movie categories in our database...
+
+categorie.addHeader: NEW CATEGORY
+categorie.addBody: Here you can create a new movie category...
+categorie.addSuccess: Category created successfully
+
+categorie.editHeader: EDIT CATEGORY
+categorie.editBody: Here you can modify the information about the movie category...
+categorie.editSuccess: Category edited successfully
+
+categorie.queryHeader: DETAILS OF THE CATEGORY
+categorie.queryBody: Here you can review details of the category you selected...
+categorie.queryMovies: Movies in this category include
+
+categorie.deleteSuccess: Category deleted successfully
+categorie.deleteForbidden: This category cannot be deleted since movies still belongs to it...
+
+categorie.foundMsg: %counter% categories found
+categorie.notFoundMsg: No category found...
+categorie.back: Back to Categories
+categorie.backToList: Back to Categories list
+
+# MOVIES
+
+film: Movie
+
+film.titre: Title
+film.description: Plot
+film.category: Category
+film.categoryPlaceholder: Pick a category...
+film.year: Year
+film.yearPlaceholder: Pick a year...
+film.actors: Actors (Multiple choices)
+
+film.listHeader: MOVIES LIST
+film.listBody: Here you can review all movies in our database...
+
+film.addHeader: NEW MOVIE
+film.addBody: Here you can create a new movie...
+film.addSuccess: Movie created successfully
+
+film.editHeader: EDIT MOVIE
+film.editBody: Here you can modify the information about the movie...
+film.editSuccess: Movie edited successfully
+
+film.queryHeader: DETAILS OF THE MOVIE
+film.queryBody: Here you can review details of the movie you selected...
+
+film.deleteSuccess: Movie deleted successfully
+
+film.foundMsg: %counter% movies found
+film.notFoundMsg: No movie found...
+film.back: Back to Movies
+film.backToList: Back to Movies list
+
+# TWIG
+
+twig.errorHeader: An Error Occurred
+twig.errorBody: The server returned an error
+twig.errorSorryStart: Please
+twig.errorSorryLink: let us know
+twig.errorSorryEnd: what you were doing when this error occurred and we will fix it as soon as possible.
+twig.errorSorryExtra: Sorry for any inconvenience caused.

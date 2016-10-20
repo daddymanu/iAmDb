@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">        
+        <div class="navbar-header">
+
+            {# Collapsed Hamburger #}
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            {# Branding Image #}
+            <img class="navbar-brand" src="{{ asset('logo.png') }}" alt="{{ "default.logoAlt" | trans }}" style="margin-top:-5px; width:56px; height:56px" />
+            <a class="navbar-brand" href="{{ path('myapp_homepage') }}">IamDB</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            {# Left Side Of Navbar #}
+            <ul class="nav navbar-nav" style="margin-left:50px">
+                <li><a href="{{ path('myapp_movies') }}">{{ "default.moviesLabel" | trans }}</a></li>
+                <li><a href="{{ path('myapp_actors') }}">{{ "default.actorsLabel" | trans }}</a></li>
+                <li><a href="{{ path('myapp_categories') }}">{{ "default.categoriesLabel" | trans }}</a></li>
+                {# @if(! Auth::guest()) #}
+                    {# <li><a href="{{ url('/home') }}">Home</a></li> #}
+{#                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/posts') }}"><i class="fa fa-btn fa-star"></i>All Posts</a></li>
+                            <li><a href="{{ url('/myposts') }}"><i class="fa fa-btn fa-star-o"></i>My Posts</a></li>
+                        </ul>
+                    </li> #}
+               {#  @endif #}
+            </ul>
+
+            {# Right Side Of Navbar #}
+            <div class="nav navbar-nav navbar-right" style="font-size: 10px; margin-left:15px; margin-top:18px ">{{ "default.languageLabel" | trans }} :
+                <a href="{{ path('myapp_language', {'lg' : 'fr'}) }}" alt="Français">FR</a> |
+                <a href="{{ path('myapp_language', {'lg' : 'en'}) }}" alt="English">EN</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                {# Authentication Links #}
+                {# @if(Auth::guest()) #}
+                    <li><a href="{{ path('myapp_homepage') }}">{{ "default.loginLabel" | trans }}</a></li>
+                    <li><a href="{{ path('myapp_homepage') }}">{{ "default.registerLabel" | trans }}</a></li>
+                {#  @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
+                            <li><a href="{{ path('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                @endif #}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,25 @@
+{# To test the error message in dev: #}
+{# http://localhost:8000/app_dev.php/_error/404 #}
+
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron" style="margin-top:50px">
+                <div class="panel-heading"><strong>{{ "twig.errorHeader" | trans }}</strong></div>
+                <div class="panel-body">
+                    {{ "twig.errorBody" | trans }} "{{ status_code }}" <em>({{ status_text }})</em>
+                    <br><br>
+                    {{ "twig.errorSorryStart" | trans }} <a href="mailto:someone@example.com?Subject=Error%20{{status_code}}" target="_top">{{ "twig.errorSorryLink" | trans }}</a> {{ "twig.errorSorryEnd" | trans }}
+                    <br>
+                    {{ "twig.errorSorryExtra" | trans }}
+                </div>
+                <br>
+                <div>
+                    <a class="pull-right" href="{{ path('myapp_homepage') }}" style="margin-top:8px">{{ "default.back" | trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,126 @@
+default.metaDescription: Cet exercice vise à travailler avec Symfony. Il est basé sur un site proposant des fiches détaillées de films, dans différentes catégories et avec différents acteurs.
+default.logoAlt: Logo MyFilms
+
+default.moviesLabel: Films
+default.actorsLabel: Acteurs
+default.categoriesLabel: Catégories
+default.languageLabel: Langue
+default.loginLabel: Connexion
+default.registerLabel: Inscription
+
+default.welcomeLabel: BIENVENUE
+default.welcomeUser: INVITÉ(E)
+default.welcomeMessage: Afin d'avoir accès à notre base de données de films, veuillez vous identifier...
+
+default.btnSave: Valider
+default.btnSubmit: Soumettre
+default.btnEdit: Modifier
+default.btnDelete: Supprimer
+
+default.back: Retour
+
+default.noResult: DÉSOLÉ, AUCUN RÉSULTAT...
+
+# ACTORS
+
+acteur: Acteur
+
+acteur.nom: Nom
+acteur.prenom: Prénom
+acteur.dateNaissance: Date de naissance
+acteur.sexe: Sexe
+
+acteur.listHeader: LISTE DES ACTEURS
+acteur.listBody: Ici figurent tous les acteurs recensés dans notre base de données...
+
+acteur.addHeader: AJOUTER UN ACTEUR
+acteur.addBody: Cette page vous permet d'ajouter un acteur...
+acteur.addSuccess: Acteur créé avec succès
+
+acteur.editHeader: MODIFIER UN ACTEUR
+acteur.editBody: Cette page vous permet de modifier les informations relatives à un acteur...
+acteur.editSuccess: Acteur modifié avec succès
+
+acteur.queryHeader: L'ACTEUR EN DETAIL
+acteur.queryBody: Cette page vous permet de visualiser les informations relatives à un acteur...
+acteur.queryMovies: Films dans lesquels joue cet acteur
+
+acteur.deleteSuccess: Acteur supprimé avec succès
+
+acteur.foundMsg: %counter% acteur(s) trouvé(s)
+acteur.notFoundMsg: Aucun acteur trouvé...
+acteur.srSearch: Rechercher
+acteur.altLoading: Recherche en cours. Veuillez patienter...
+acteur.back: Retour aux Acteurs
+acteur.backToList: Retour à la liste des Acteurs
+
+# CATEGORIES
+
+categorie: Catégorie
+
+categorie.nom: Nom
+
+categorie.listHeader: LISTE DES CATÉGORIES
+categorie.listBody: Ici figurent toutes les catégories de films recensées dans notre base de données...
+
+categorie.addHeader: AJOUTER UNE CATÉGORIE
+categorie.addBody: Cette page vous permet d'ajouter une catégorie de film...
+categorie.addSuccess: Catégorie créée avec succès
+
+categorie.editHeader: MODIFIER UNE CATÉGORIE
+categorie.editBody: Cette page vous permet de modifier les informations relatives à une catégorie de film...
+categorie.editSuccess: Catégorie modifiée avec succès
+
+categorie.queryHeader: LA CATÉGORIE EN DÉTAIL
+categorie.queryBody: Cette page vous permet de visualiser les informations relatives à une catégorie de film...
+categorie.queryMovies: Films dans cette catégorie
+
+categorie.deleteSuccess: Catégorie supprimée avec succès
+categorie.deleteForbidden: Cette catégorie ne peut pas être supprimée car des films lui sont liés...
+
+categorie.foundMsg: %counter% catégorie(s) trouvée(s)
+categorie.notFoundMsg: Aucune catégorie trouvée...
+categorie.back: Retour aux Catégories
+categorie.backToList: Retour à la liste des Catégories
+
+# MOVIES
+
+film: Movie
+
+film.titre: Titre
+film.description: Description
+film.category: Catégorie
+film.categoryPlaceholder: Choisir une catégorie...
+film.year: Année
+film.yearPlaceholder: Choisir une date...
+film.actors: Acteurs (Choix multiples)
+
+film.listHeader: LISTE DES FILMS
+film.listBody: Ici figurent tous les films recensés dans notre base de données...
+
+film.addHeader: AJOUTER UN FILM
+film.addBody: Cette page vous permet d'ajouter un film...
+film.addSuccess: Film créé avec succès
+
+film.editHeader: MODIFIER UN FILM
+film.editBody: Cette page vous permet de modifier les informations relatives à un film...
+film.editSuccess: Film modifié avec succès
+
+film.queryHeader: LE FILM EN DÉTAIL
+film.queryBody: Cette page vous permet de visualiser les informations relatives à un film...
+
+film.deleteSuccess: Film supprimé avec succès
+
+film.foundMsg: %counter% film(s) trouvé(s)
+film.notFoundMsg: Aucun film trouvé...
+film.back: Retour aux Films
+film.backToList: Retour à la liste des Films
+
+# TWIG
+
+twig.errorHeader: Une erreur est survenue
+twig.errorBody: Le serveur a retourné une erreur
+twig.errorSorryStart: Merci de
+twig.errorSorryLink: nous contacter
+twig.errorSorryEnd: pour nous faire savoir ce que vous faisiez lorsque l'erreur est surevenue, afin que nous puissions la régler aussitôt que possible.
+twig.errorSorryExtra: Veuillez nous excuser pour la gêne occasionnée.

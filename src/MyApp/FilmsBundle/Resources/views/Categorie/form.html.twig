@@ -1,0 +1,17 @@
+            <div class='form-group form-horizontal'>
+				{{ form_start(form) }}
+
+			    	{{ form_errors(form) }}
+
+				    {{ form_label(form.nom) }}
+				    {{ form_errors(form.nom) }}
+				    {{ form_widget(form.nom) }}
+					<br>
+
+					<div>
+						{{ form_widget(form.submit) }}	    
+						<a class="pull-right" href="{{ prevPage }}" style="margin-top:8px">{{ "categorie.back" | trans }}</a>
+					</div>
+			    {{ form_end(form) }}
+				
+            </div>

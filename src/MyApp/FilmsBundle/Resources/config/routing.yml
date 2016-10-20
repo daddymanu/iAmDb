@@ -1,0 +1,86 @@
+myapp_homepage:
+  path: /
+  defaults: { _controller: MyAppFilmsBundle:Default:welcome }
+
+myapp_language:
+  path: /lg/{lg}
+  defaults: { _controller: MyAppFilmsBundle:Default:language }
+
+# categories
+# ===========================================================================
+
+myapp_categories:
+  path: /categories
+  defaults: { _controller: MyAppFilmsBundle:Categorie:list }
+
+myapp_category_edit:
+  path: /category/edit/{id}
+  defaults: { _controller: MyAppFilmsBundle:Categorie:edit }
+
+myapp_category_add:
+  path: /category/add
+  defaults: { _controller: MyAppFilmsBundle:Categorie:add }
+
+myapp_category_delete:
+  path: /category/delete/{id}
+  defaults: { _controller: MyAppFilmsBundle:Categorie:delete }
+
+myapp_category_query:
+  path: /category/query/{id}
+  defaults: { _controller: MyAppFilmsBundle:Categorie:query }
+
+# actors
+# ===========================================================================
+
+myapp_actors:
+  path: /actors
+  defaults: { _controller: MyAppFilmsBundle:Acteur:list }
+
+myapp_actor_add:
+  path: /actor/add
+  defaults: { _controller: MyAppFilmsBundle:Acteur:add }
+
+myapp_actor_edit:
+  path: /actor/edit/{id}
+  defaults: { _controller: MyAppFilmsBundle:Acteur:edit }
+
+myapp_actor_delete:
+  path: /actor/delete/{id}
+  defaults: { _controller: MyAppFilmsBundle:Acteur:delete }
+
+myapp_actor_query:
+  path: /actor/query/{id}
+  defaults: { _controller: MyAppFilmsBundle:Acteur:query }
+
+myapp_actor_top:
+  path: /actor/top
+  defaults: { _controller: MyAppFilmsBundle:Acteur:top }
+
+myapp_actor_search:
+  path: /actor/search
+  defaults: { _controller: MyAppFilmsBundle:Acteur:search }
+  requirements:
+    _method: POST
+
+# films
+# ===========================================================================
+
+myapp_movies:
+  path: /movies
+  defaults: { _controller: MyAppFilmsBundle:Film:list }
+
+myapp_movie_add:
+  path: /movie/add
+  defaults: { _controller: MyAppFilmsBundle:Film:add }
+  
+myapp_movie_edit:
+  path: /movie/edit/{id}
+  defaults: { _controller: MyAppFilmsBundle:Film:edit }
+
+myapp_movie_delete:
+  path: /movie/delete/{id}
+  defaults: { _controller: MyAppFilmsBundle:Film:delete }
+
+myapp_movie_query:
+  path: /movie/query/{id}
+  defaults: { _controller: MyAppFilmsBundle:Film:query }

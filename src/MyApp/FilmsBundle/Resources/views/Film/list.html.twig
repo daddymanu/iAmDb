@@ -1,0 +1,58 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ "film.listHeader" | trans }}</strong></span>
+	                        <span class="pull-right" style="margin-top:-7px;">
+	                            <a href="{{ url('myapp_movie_add') }}"><button type="button" class="btn btn-primary btn-md"><i class="fa fa-plus"></i></button></a>
+	                        </span>
+	                    </div>
+	                    <div class="panel-body">{{ "film.listBody" | trans }}</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+	            
+	            <ul class="list-group">
+        			{% for mov in movies %}
+	                    <li class="list-group-item" style="overflow:auto">
+	                    	<a href="{{ path('myapp_movie_query', { 'id': mov.id }) }}" style="text-decoration: none;">
+                                <span>
+                                	<strong>{{ mov.titre }}</strong>
+                                </span>
+                            </a>
+
+                            <span style="color:grey; font-size:10px; margin-left:10px">
+								({{ mov.categorie.nom }}, {{ mov.year }})
+                            </span>
+
+                        	{% for act in mov.acteurs %}
+                        		<a href="{{ path('myapp_actor_query', { 'id': act.id }) }}" style="text-decoration: none;">
+		                            <span style="font-size:10px; margin-left:10px">
+										{{ act.prenom|capitalize }} {{ act.nom|upper }}
+		                            </span>
+	                        	</a>
+                            {% endfor %}
+
+                            <span style="color:grey; font-size:10px">
+                                <em>{{ mov.description|slice(0, 75) }} [...]</em>
+                            </span>
+	                       {#  @if(Auth::user()->id == $post->user_id) #}
+	                        <span class="pull-right">
+	                            <a href="{{ path('myapp_movie_edit', { 'id': mov.id }) }}"><button type="button" class="btn btn-info btn-xs">{{ "default.btnEdit" | trans }}</button></a>
+	                            <a href="{{ path('myapp_movie_delete', { 'id': mov.id }) }}"><button type="button" class="btn btn-danger btn-xs">{{ "default.btnDelete" | trans }}</button></a>
+	                        </span>
+	                        {# @endif #}
+	                    </li>
+					{% endfor %}
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+			
+{% endblock %}

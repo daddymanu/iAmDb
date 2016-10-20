@@ -1,0 +1,22 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron" style="margin-top:50px">
+                <div class="panel-heading"><strong>An Error Occurred</strong></div>
+                <div class="panel-body">
+                    The server returned an error "{{ status_code }}" ({{ status_text }})
+                    <br><br>
+                    Please <a href="mailto:someone@example.com?Subject=Error%20{{status_code}}" target="_top">let us know</a> what you were doing when this error occurred and we will fix it as soon as possible.
+                    <br>
+                    Sorry for any inconvenience caused.
+                </div>
+                <br>
+                <div>
+                    <a class="pull-right" href="{{ path('myapp_homepage') }}" style="margin-top:8px">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

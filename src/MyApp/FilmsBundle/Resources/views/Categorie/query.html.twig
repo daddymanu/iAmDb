@@ -1,0 +1,50 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-md-10 col-md-offset-1">
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ "categorie.queryHeader" | trans }}</strong></span>
+	                    </div>
+	                    <div class="panel-body">{{ "categorie.queryBody" | trans }}</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+	            
+	            <div class="jumbotron" style="overflow:auto">
+                    <span style="font-size:20px">
+                    	<strong>{{ category.nom }}</strong>
+                    </span>
+					<br><br>
+                    <span style="font-size:15px">
+						<strong>{{ "categorie.queryMovies" | trans }}:</strong>
+                    </span>
+                    <br>
+                	{% for mov in category.films %}
+                		<a href="{{ path('myapp_movie_query', { 'id': mov.id }) }}" style="text-decoration: none;">
+	                        <span style="font-size:15px">
+								{{ mov.titre }}
+	                        </span>
+                    	</a>
+                        <span style="font-size:10px; margin-left:10px">
+							({{ mov.year }})
+                        </span>
+                        <br>
+					{% else %}
+	                    <span style="font-size:15px">
+	                        <em>{{ "film.notFoundMsg" | trans }}</em>
+	                    </span>
+                    {% endfor %}
+					<div>
+						<a class="pull-right" href="{{ prevPage }}" style="margin-top:8px">{{ "categorie.back" | trans }}</a>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+			
+{% endblock %}

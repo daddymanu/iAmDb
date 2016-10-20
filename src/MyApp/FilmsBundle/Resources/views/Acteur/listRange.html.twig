@@ -1,0 +1,44 @@
+	            {# Store the current URL that will be used for redirection when a post is deleted from its own URL #}
+	            {# {!! Session::put('backUrl', Request::fullUrl()) !!} #}
+	            {#<p> TEST: {{ Session::get('backUrl') }} </p> #}
+	            
+	            <ul class="list-group">
+        			{% for act in actors %}
+	                    <li class="list-group-item" style="overflow:auto">
+                            <span>
+		                    	<a href="{{ path('myapp_actor_query', { 'id': act.id }) }}" style="text-decoration: none;"><strong>{{ act.nom }} {{ act.prenom }}</strong></a>
+                            </span>
+
+                            <span style="margin-left:10px">
+								{% if act.sexe == 'F' %}
+                                	<i class="fa fa-venus" style="color:pink"></i>
+								{% else %}
+                                	<i class="fa fa-mars" style="color:blue"></i>
+								{% endif %}
+                            </span>
+
+                            <span style="color:grey; font-size:10px; margin-left:10px">
+                            	{# {% if lg == 'fr' %}
+                                	({{ act.dateNaissance|date("j M Y") }} -
+                                {% else %}
+                                	({{ act.dateNaissance|date("M j, Y") }} -
+                            	{% endif %} #}
+                            	({{ act.dateNaissance|localizeddate('medium', 'none', lg) }} - 
+                                {% if act.dateMort is not null %}
+                                	<i class="fa fa-circle" style="font-size:7px; margin-left:5px; margin-right:5px"> </i>
+                                	<strong>Dec:</strong> 
+									{{ act.dateMort|localizeddate('medium', 'none', lg) }}
+                            	{% endif %})
+                        	</span>
+
+	                       {#  @if(Auth::user()->id == $post->user_id) #}
+	                        <span class="pull-right">
+	                            <a href="{{ path('myapp_actor_edit', { 'id': act.id }) }}"><button type="button" class="btn btn-info btn-xs">{{ "default.btnEdit" | trans }}</button></a>
+	                            <a href="{{ path('myapp_actor_delete', { 'id': act.id }) }}"><button type="button" class="btn btn-danger btn-xs">{{ "default.btnDelete" | trans }}</button></a>
+	                        </span>
+	                        {# @endif #}
+	                    </li>
+                    {% else %}
+                    	<p>{{ "default.noResult" | trans }}</p>
+					{% endfor %}
+	            </ul>

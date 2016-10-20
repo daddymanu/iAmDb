@@ -1,0 +1,72 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+	            
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <span><strong>{{ "acteur.listHeader" | trans }}</strong></span>
+	                        <span class="pull-right" style="margin-top:-7px;">
+	                            <a href="{{ url('myapp_actor_add') }}"><button type="button" class="btn btn-primary btn-md"><i class="fa fa-plus"></i></button></a>
+	                        </span>
+	                    </div>
+	                    <div class="panel-body">{{ "acteur.listBody" | trans }}</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+
+	            {# <div><a href="{{ path('myapp_actor_top') }}">Top 3</a></div> #}
+
+				<form id="search_actors_form" action="{{ path('myapp_actor_search') }}">
+					<div class="row-fluid" style="overflow:auto">
+						<div style="display: inline-block; width: 50%; min-width:215px; float:left">
+							{{ form_widget(form.keyword, { 'attr' : { 'class':'form-control' }}) }}
+						</div>
+						<div style="display: inline-block">
+							<button class="btn btn-primary btn-md" type="submit" name="search" value="search"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">{{ "acteur.srSearch" | trans }}</span></button>
+						</div>
+						<div style="display: inline-block">
+							<img class="loading" src={{ asset('loading.gif') }} alt="{{ "acteur.altLoading" | trans }}">
+						</div>
+						<div class="pull-right" style="display: inline-block; margin-top: 5px; margin-right: 2px; color:grey">
+							<em>{{ 'acteur.foundMsg' | trans({'%counter%': actors|length }) }}</em>
+						</div>
+					</div>
+				</form>
+				<br>
+								
+				<div id="search_results"> 
+				    {% include 'MyAppFilmsBundle:Acteur:listRange.html.twig' with {'actors' : actors, 'lg' : lg}  %}
+				</div>
+
+				<script>
+					$(".loading").hide();
+					$("#search_actors_form").submit(function(){
+					    $(".loading").show();
+					    var keyword = $("#acteur_search_keyword").val();
+					    var DATA = 'keyword=' + keyword;
+					    console.log(DATA);
+					    $.ajax({
+					        type: "POST",
+					        url: "{{ path('myapp_actor_search') }}",
+					        data: DATA,
+					        cache: false,
+					        success: function(data){
+						        $('#search_results').html(data);
+					            $(".loading").hide();
+					        	//console.log(data);
+					        }
+					    });    
+					    return false;
+					});
+				</script>
+
+            </div>
+	    </div>
+	</div>
+			
+{% endblock %}

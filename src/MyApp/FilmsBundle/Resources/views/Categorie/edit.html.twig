@@ -1,0 +1,20 @@
+{% extends 'MyAppFilmsBundle:Default:index.html.twig' %}
+
+{% block content %}
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-6 col-md-offset-3">
+	            <div class="panel-group">
+	                <div class="panel panel-primary">
+	                    <div class="panel-heading"><strong>{{ "categorie.editHeader" | trans }}</strong></div>
+	                    <div class="panel-body">{{ "categorie.editBody" | trans }}</div>
+	                </div>
+	            </div>
+
+				{% include 'MyAppFilmsBundle:Default:message.html.twig' %}
+				{% include 'MyAppFilmsBundle:Categorie:form.html.twig' %}
+
+	        </div>
+	    </div>
+	</div>	
+{% endblock %}

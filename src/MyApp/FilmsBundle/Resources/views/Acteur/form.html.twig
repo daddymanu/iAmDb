@@ -1,0 +1,72 @@
+            <div class='form-group form-horizontal'>
+				{{ form_start(form) }}
+
+					{#<form action="" method="post">
+					    {{ form_widget(form) }}
+					</form> #}
+
+			    	{{ form_errors(form) }}
+
+				    {{ form_label(form.nom) }}
+				    {{ form_errors(form.nom) }}
+				    {{ form_widget(form.nom) }}
+
+ 				    {{ form_label(form.prenom) }}
+				    {{ form_errors(form.prenom) }}
+				    {{ form_widget(form.prenom) }}
+
+				    {{ form_label(form.dateNaissance, 'acteur.dateNaissance' | trans ) }}
+				    {{ form_errors(form.dateNaissance) }}
+				    <div class="row">
+				    	{% if lg == 'fr' %}
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					    		{{ form_widget(form.dateNaissance.day, { 'attr' : { 'class':'form-control' }}) }}
+				    		</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					    		{{ form_widget(form.dateNaissance.month, { 'attr' : { 'class':'form-control' }}) }}
+					    	</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					    		{{ form_widget(form.dateNaissance.year, { 'attr' : { 'class':'form-control' }}) }}
+					    	</div>
+				    	{% else %}
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					    		{{ form_widget(form.dateNaissance.year, { 'attr' : { 'class':'form-control' }}) }}
+					    	</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					    		{{ form_widget(form.dateNaissance.month, { 'attr' : { 'class':'form-control' }}) }}
+					    	</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					    		{{ form_widget(form.dateNaissance.day, { 'attr' : { 'class':'form-control' }}) }}
+					    	</div>
+			    		{% endif %}
+			    	</div>
+					{#<div class="row">
+				    	<div class="col-md-6">
+						</div>
+						<div class="col-md-6">
+							{{ form_label(form.dateMort, "Date of Death, eventually") }}
+							{{ form_errors(form.dateMort) }}
+						</div>
+					</div>
+
+				    <div class="form-control">
+				    	<div class="col-md-6">
+					    	{{ form_widget(form.dateNaissance) }}
+						</div>
+						<div class="col-md-6">
+					    	{{ form_widget(form.dateMort) }}
+						</div>
+					</div> #}
+
+				    {{ form_label(form.sexe) }}
+				    {{ form_errors(form.sexe) }}
+				    {{ form_widget(form.sexe) }}
+					<br>
+
+					<div class="row-fluid">
+						{{ form_widget(form.submit) }}	    
+						<a class="pull-right" href="{{ prevPage }}" style="margin-top:8px">{{ "acteur.back" | trans }}</a>
+					</div>
+			    {{ form_end(form) }}
+				
+            </div>
